@@ -1,0 +1,36 @@
+﻿<Window x:Class="hashAll.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hashAll"
+        mc:Ignorable="d"
+        Title="Hash" Height="402" Width="600">
+    <Grid>
+        <TextBox x:Name="TextboxInput" HorizontalAlignment="Left" Margin="93,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Height="32" TextChanged="TextBox_TextChanged" Text="{Binding hashList}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="47,23,0,0" TextWrapping="Wrap" Text="Welcome to hashAll" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" FontFamily="Corbel"/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.488,1.569"><Run Language="es-es" Text="Enter a string to hash"/></TextBlock>
+        <Button x:Name="ButtonInput" HorizontalAlignment="Left" Margin="93,131,0,0" VerticalAlignment="Top" Height="27" Click="Button_Click" BorderBrush="#FF060606" Content="GET HASH" Background="#FF203131" Foreground="White" Width="433"/>
+        <ListView x:Name="hashListView" Margin="93,177,74,71" >
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Hash Function" Width="90" DisplayMemberBinding="{Binding Property1}"/>
+                        <GridViewColumn x:Name="Header2" Header="Hash String" Width="317" DisplayMemberBinding="{Binding Property2}"/>
+
+                    </GridView.Columns>
+
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>
